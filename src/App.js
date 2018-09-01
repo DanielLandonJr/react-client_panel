@@ -6,6 +6,7 @@ import './App.css';
 
 // components
 import AppNavBar from './components/layout/AppNavBar';
+import Dashboard from './components/layout/Dashboard';
 
 class App extends Component {
   render() {
@@ -14,7 +15,9 @@ class App extends Component {
         <div className="App">
           <AppNavBar />
           <div className="container">
-            <h1>Client Panel</h1>
+            <Switch>
+              <Route exact path="/" component={Dashboard} />
+            </Switch>
           </div>
         </div>
       </Router>
