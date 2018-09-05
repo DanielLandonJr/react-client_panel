@@ -10,6 +10,8 @@ import './App.css';
 // components
 import AppNavBar from './components/layout/AppNavBar';
 import Dashboard from './components/layout/Dashboard';
+import AddClient from './components/clients/AddClient';
+import NotFound from './components/pages/NotFound';
 
 class App extends Component {
   render() {
@@ -21,6 +23,9 @@ class App extends Component {
             <div className="container">
               <Switch>
                 <Route exact path="/" component={Dashboard} />
+                <Route exact path="/client/add" component={AddClient} />
+                {/* 404 not found */}
+                <Route component={NotFound} />
               </Switch>
             </div>
           </div>

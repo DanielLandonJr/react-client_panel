@@ -26,6 +26,9 @@ firebase.initializeApp(firebaseConfig);
 
 // init firestore
 const firestore = firebase.firestore();
+// fixes issues reported by firestoe in the console
+const settings = { timestampsInSnapshots: true };
+firestore.settings(settings);
 
 // Add reactReduxFirebase enhancer when making store creator
 const createStoreWithFirebase = compose(
