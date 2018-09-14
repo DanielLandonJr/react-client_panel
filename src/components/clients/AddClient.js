@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 // import { compose } from 'redux';
 // import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
+
+// components
+import BackToDashboard from '../layout/BackToDashboard';
 
 class AddClient extends Component {
   state = {
@@ -44,9 +47,7 @@ class AddClient extends Component {
       <div>
         <div className="row">
           <div className="col-md-6">
-            <Link to="/" className="btn btn-link">
-              <i className="fas fa-arrow-circle-left" /> Back to Dashboard
-            </Link>
+            <BackToDashboard />
           </div>
         </div>
 

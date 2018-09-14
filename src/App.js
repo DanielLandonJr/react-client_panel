@@ -11,6 +11,7 @@ import './App.css';
 import AppNavBar from './components/layout/AppNavBar';
 import Dashboard from './components/layout/Dashboard';
 import AddClient from './components/clients/AddClient';
+import ClientDetails from './components/clients/ClientDetails';
 import NotFound from './components/pages/NotFound';
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={Dashboard} />
                 <Route exact path="/client/add" component={AddClient} />
+                <Route exact path="/client/:id" component={ClientDetails} />
                 {/* 404 not found */}
                 <Route component={NotFound} />
               </Switch>
