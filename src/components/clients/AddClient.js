@@ -36,10 +36,10 @@ class AddClient extends Component {
     // update the database..incidate which collection and what data to send
     firestore
       .add({ collection: 'clients' }, newClient)
+      .then(this.props.history.push('/'))
       .catch(error => {
         console.log(error);
-      })
-      .then(this.props.history.push('/'));
+      });
   };
 
   render() {
