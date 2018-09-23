@@ -6,14 +6,7 @@
   "private": true,
   "author": "Daniel C. Landon Jr.",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DanielLandonJr/react-client_panel.git"
-  },
-  "bugs": {
-    "url": "https://github.com/DanielLandonJr/react-client_panel/issues"
-  },
-  "homepage": "https://github.com/DanielLandonJr/react-client_panel#readme",
+  "homepage": ".",
   "dependencies": {
     "classnames": "^2.2.6",
     "firebase": "^5.4.2",
