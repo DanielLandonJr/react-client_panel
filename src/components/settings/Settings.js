@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
@@ -38,9 +38,9 @@ class Settings extends Component {
 
   render() {
     const {
-      allowRegistration,
       disableBalanceOnAdd,
-      disableBalanceOnEdit
+      disableBalanceOnEdit,
+      allowRegistration
     } = this.props.settings;
 
     return (
