@@ -47,6 +47,7 @@ class EditClient extends Component {
 
   render() {
     const { client } = this.props;
+    const { disableBalanceOnEdit } = this.props.settings;
 
     if (client) {
       return (
@@ -120,6 +121,7 @@ class EditClient extends Component {
                     id="balance"
                     ref={this.balanceInput}
                     defaultValue={client.balance}
+                    disabled={disableBalanceOnEdit}
                   />
                 </div>
 
@@ -140,7 +142,8 @@ class EditClient extends Component {
 }
 
 EditClient.propTypes = {
-  firestore: PropTypes.object.isRequired
+  firestore: PropTypes.object.isRequired,
+  settings: PropTypes.object.isRequired
 };
 
 // need to work on this onemptied...not particularly sure how this works
@@ -150,8 +153,9 @@ export default compose(
     { collection: 'clients', storeAs: 'client', doc: props.match.params.id }
   ]),
   // getting ordered from firestore assinging it to props
-  connect(({ firestore: { ordered } }, props) => ({
+  connect(({ firestore: { ordered }, settings }, props) => ({
     // client will equal the very first object in the array since we "filtered" it above using client.id
-    client: ordered.client && ordered.client[0]
+    client: ordered.client && ordered.client[0],
+    settings: settings
   }))
 )(EditClient);
